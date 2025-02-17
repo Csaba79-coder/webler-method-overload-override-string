@@ -1,5 +1,7 @@
 package stringmanipulation;
 
+import java.util.Arrays;
+
 public class StringToCharExample {
 
     // https://www.lipsum.com/ <- Lorem Ipsum generátor
@@ -34,6 +36,15 @@ public class StringToCharExample {
         String word = "Hello World";
         int countWord = word.split(" ").length;
         System.out.println(countWord);
+        String sentence = "Hello, I am the best! Are you ok? Yes, I do ...";
+        String regex = "[,\\s\\.]";
+        String[] words = sentence.split(regex); // ez szavak, de van üres szó is! ... stb ...
+        System.out.println(Arrays.toString(words));
+
+        String regex2 = "[.\\!\\?]";
+        String[] words2 = sentence.split(regex2);
+        System.out.println(Arrays.toString(words2));
+        System.out.println(words2.length);
     }
 
     // https://en.wikipedia.org/wiki/List_of_Unicode_characters
